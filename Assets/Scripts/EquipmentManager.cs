@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EquipmentManager : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class EquipmentManager : MonoBehaviour
     public List<HeadEquipment> headEquipmentList = new List<HeadEquipment>();
     public List<ChestEquipment> chestEquipmentList = new List<ChestEquipment>();
     public List<LegEquipment> legEquipmentList = new List<LegEquipment>();
+
+    public UnityEvent updateHeadEquipment;
+    public UnityEvent updateArmEquipment;
+    public UnityEvent updateLegEquipment;
+    public UnityEvent updateChestEquipment;
 
     private void Awake()
     {
@@ -24,9 +30,4 @@ public class EquipmentManager : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        
-    }
-    
 }

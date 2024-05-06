@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 0
   name: Common Chest
   cost: 1
-  itemType: 3
+  itemType: 4
   iconSprite: {fileID: 1175337135, guid: 39e330e90558c95488f6490794fb62c0, type: 3}
   torsoSprite: {fileID: 21300000, guid: 3d9056df586b6024fbc5b9fee2433eef, type: 3}
   pelvisSprite: {fileID: 21300000, guid: 4807dc8cba98f89409729f6aac2945a7, type: 3}

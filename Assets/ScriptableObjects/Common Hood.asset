@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 0
   name: Common Hood
   cost: 1
-  itemType: 1
+  itemType: 2
   iconSprite: {fileID: 1358483531, guid: 4df719f292ca0d54bbeb6c74d6548ad2, type: 3}
   hoodSprite: {fileID: 21300000, guid: 468244f274f38f64b85773c7888444b6, type: 3}
   maskSprite: {fileID: 21300000, guid: 8e016bdb4d00e70429de56b91135940c, type: 3}

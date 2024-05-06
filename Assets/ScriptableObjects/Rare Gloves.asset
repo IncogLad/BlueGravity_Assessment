@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 1
   name: Rare Gloves
   cost: 2
-  itemType: 2
+  itemType: 3
   iconSprite: {fileID: -643923687, guid: 992277a1e7ff5984ebae25f8c4fed8aa, type: 3}
   leftShoulderSprite: {fileID: 21300000, guid: 805906b1206aa944b99385aa2c600d2f, type: 3}
   rightShoulderSprite: {fileID: 21300000, guid: 9fe981f3e80b99e429e4399b985d07f4, type: 3}

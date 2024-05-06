@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerSkeleton : MonoBehaviour
 {
@@ -42,8 +43,6 @@ public class PlayerSkeleton : MonoBehaviour
     private Sprite rightLegDef;
     private Sprite rightBootDef;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         hoodDef = hoodRenderer.sprite;
@@ -64,6 +63,67 @@ public class PlayerSkeleton : MonoBehaviour
         rightArmDef = rightArmRenderer.sprite;
         rightGlovesDef = rightGlovesRenderer.sprite;
     }
-    
+
+    public void UpdateEquipment(ItemType type, int equipId)
+    {
+        EquipmentManager em = EquipmentManager.Instance;
+        if (equipId < 0)
+        {
+            switch (type)
+            {
+                case ItemType.Boots:
+                    leftBootRenderer.sprite = leftLegDef; 
+                    leftLegRenderer.sprite = leftBootDef;
+                    rightBootRenderer.sprite = rightLegDef;
+                    rightLegRenderer.sprite = rightBootDef;
+                    break;
+                case ItemType.Hood:
+                    hoodRenderer.sprite = hoodDef;
+                    maskRenderer.sprite = maskDef;
+                    break;
+                case ItemType.Chest:
+                    torsoRenderer.sprite = torsoDef;
+                    pelvisRenderer.sprite = pelvisDef;
+                    break;
+                case ItemType.Gloves:
+                    leftShoulderRenderer.sprite = leftShoulderDef;
+                    leftArmRenderer.sprite = leftArmDef;
+                    leftGlovesRenderer.sprite = leftGlovesDef;
+                    rightShoulderRenderer.sprite = rightShoulderDef;
+                    rightArmRenderer.sprite = rightArmDef;
+                    rightGlovesRenderer.sprite = rightGlovesDef;
+                    break;
+            }
+        }
+        else
+        {
+            switch (type)
+            {
+                case ItemType.Boots:
+                    leftBootRenderer.sprite = em.legEquipmentList[equipId].leftBootSprite;
+                    leftLegRenderer.sprite = em.legEquipmentList[equipId].leftLegSprite;
+                    rightBootRenderer.sprite = em.legEquipmentList[equipId].rightBootSprite;
+                    rightLegRenderer.sprite = em.legEquipmentList[equipId].rightLegSprite;
+                    break;
+                case ItemType.Hood:
+                    hoodRenderer.sprite = em.headEquipmentList[equipId].hoodSprite;
+                    maskRenderer.sprite = em.headEquipmentList[equipId].maskSprite;
+                    break;
+                case ItemType.Chest:
+                    torsoRenderer.sprite = em.chestEquipmentList[equipId].torsoSprite;
+                    pelvisRenderer.sprite = em.chestEquipmentList[equipId].pelvisSprite;
+                    break;
+                case ItemType.Gloves:
+                    leftShoulderRenderer.sprite = em.armEquipmentList[equipId].leftShoulderSprite;
+                    leftArmRenderer.sprite = em.armEquipmentList[equipId].leftArmSprite;
+                    leftGlovesRenderer.sprite = em.armEquipmentList[equipId].leftGloveSprite;
+                    rightShoulderRenderer.sprite = em.armEquipmentList[equipId].rightShoulderSprite;
+                    rightArmRenderer.sprite = em.armEquipmentList[equipId].rightArmSprite;
+                    rightGlovesRenderer.sprite = em.armEquipmentList[equipId].rightGloveSprite;
+                    break;
+            }
+        }
+        
+    }
 
 }

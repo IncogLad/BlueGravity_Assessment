@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 2
   name: Epic Chest
   cost: 4
-  itemType: 3
+  itemType: 4
   iconSprite: {fileID: -709782166, guid: 54b6559e6840f6d40bc9abe4d9233d0d, type: 3}
   torsoSprite: {fileID: 21300000, guid: 250530d3e9754ed418009e3d539275b3, type: 3}
   pelvisSprite: {fileID: 21300000, guid: b1babcb6ce4ee78478abc5076a6d1b8d, type: 3}

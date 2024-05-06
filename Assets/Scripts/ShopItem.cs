@@ -11,6 +11,7 @@ public class ShopItem : MonoBehaviour
 {
     private int id;
     private int cost;
+    private int equipId;
     [SerializeField] private Image itemIcon;
     [SerializeField] private TextMeshProUGUI itemName;
     [SerializeField] private TextMeshProUGUI itemCost;
@@ -21,19 +22,21 @@ public class ShopItem : MonoBehaviour
 
     public void SetItemId(int id) { this.id = id; }
     public Sprite GetItemSprite() { return itemIcon.sprite; }
+    public int GetEquipId() { return equipId; }
     public int GetItemId() { return id; }
     public string GetItemName() { return itemName.text; }
     public ItemType GetItemType() { return itemType; }
     public int GetItemCost() { return this.cost; }
 
 
-    public void SetShopItemInfo(Sprite sprite, string name, int cost, ItemType type)
+    public void SetShopItemInfo(Sprite sprite, string name, int cost, ItemType type, int equipId)
     {
         this.itemIcon.sprite = sprite;
         this.itemName.text = name;
         this.cost = cost;
         this.itemCost.text = "Cost: "+cost.ToString();
         this.itemType = type;
+        this.equipId = equipId;
     }
 
     public void SetToSoldOut()

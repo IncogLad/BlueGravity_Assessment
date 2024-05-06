@@ -92,7 +92,7 @@ public class InventoryManager : MonoBehaviour
 
         InventoryItem invItem = newItem.GetComponent<InventoryItem>();
         invItem.SetInvItemVar(shopItem.GetItemSprite(), shopItem.GetItemName(), shopItem.GetItemCost(),
-            shopItem.GetItemType());
+            shopItem.GetItemType(), shopItem.GetEquipId());
         newSlot.SetItemInSlot(invItem);
         invItem.SetItemId(newSlot.id);
 
@@ -140,12 +140,12 @@ public class InventoryManager : MonoBehaviour
         InventoryItem swapInvItem = GetInventorySlotOfIndex(newSlotId).item;
 
         invItem.SetInvItemVar(swapInvItem.GetItemSprite(), swapInvItem.GetItemName(), swapInvItem.GetItemCost(),
-            swapInvItem.GetItemType());
+            swapInvItem.GetItemType(), swapInvItem.equipId);
         prevSlot.SetItemInSlot(invItem);
         invItem.SetItemId(prevSlot.id);
 
         //destroy the clone in the new spot
-        Destroy(GetInventorySlotOfIndex(newSlotId).transform.GetChild(0).gameObject);
+        Destroy(GetInventorySlotOfIndex(newSlotId).item.gameObject);
     }
 
 }

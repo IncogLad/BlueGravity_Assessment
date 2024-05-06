@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 2
   name: Epic Hood
   cost: 4
-  itemType: 1
+  itemType: 2
   iconSprite: {fileID: -360382408, guid: e2cdb6265e7878948abf29791f788e38, type: 3}
   hoodSprite: {fileID: 21300000, guid: 20eb058aea3c3a744bb5d47a1610550a, type: 3}
   maskSprite: {fileID: 21300000, guid: 7db7af78e8f9c45418a407bdd7958560, type: 3}

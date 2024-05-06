@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 0
   name: Common Boots
   cost: 1
-  itemType: 4
+  itemType: 5
   iconSprite: {fileID: 753932533, guid: ef6e85883bd2dd6468ff6a5095985420, type: 3}
   leftLegSprite: {fileID: 21300000, guid: 5cb065829e2f3084cb4dd46e0f41fb30, type: 3}
   rightLegSprite: {fileID: 21300000, guid: 3cf87d879b214174ea666233f56d905e, type: 3}

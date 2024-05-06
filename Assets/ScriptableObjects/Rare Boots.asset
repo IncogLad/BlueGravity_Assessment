@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 1
   name: Rare Boots
   cost: 2
-  itemType: 4
+  itemType: 5
   iconSprite: {fileID: -1780588903, guid: 3c0fce6b66f773c40ab3a7059201229b, type: 3}
   leftLegSprite: {fileID: 21300000, guid: 40e550cd3b539f14eb98d42b6769b592, type: 3}
   rightLegSprite: {fileID: 21300000, guid: 7b78357522a34d64bb8775b962b0deb0, type: 3}

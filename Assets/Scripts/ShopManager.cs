@@ -47,28 +47,28 @@ public class ShopManager : MonoBehaviour
         foreach (var item in EquipmentManager.Instance.armEquipmentList)
         {
             ShopItem shopItem = SpawnShopItem();
-            shopItem.SetShopItemInfo(item.iconSprite, item.name, item.cost, item.itemType);
+            shopItem.SetShopItemInfo(item.iconSprite, item.name, item.cost, item.itemType, item.id);
             shopItemList.Add(shopItem);
         }
 
         foreach (var item in EquipmentManager.Instance.headEquipmentList)
         {
             ShopItem shopItem = SpawnShopItem();
-            shopItem.SetShopItemInfo(item.iconSprite, item.name, item.cost, item.itemType);
+            shopItem.SetShopItemInfo(item.iconSprite, item.name, item.cost, item.itemType, item.id);
             shopItemList.Add(shopItem);
         }
 
         foreach (var item in EquipmentManager.Instance.chestEquipmentList)
         {
             ShopItem shopItem = SpawnShopItem();
-            shopItem.SetShopItemInfo(item.iconSprite, item.name, item.cost, item.itemType);
+            shopItem.SetShopItemInfo(item.iconSprite, item.name, item.cost, item.itemType, item.id);
             shopItemList.Add(shopItem);
         }
 
         foreach (var item in EquipmentManager.Instance.legEquipmentList)
         {
             ShopItem shopItem = SpawnShopItem();
-            shopItem.SetShopItemInfo(item.iconSprite, item.name, item.cost, item.itemType);
+            shopItem.SetShopItemInfo(item.iconSprite, item.name, item.cost, item.itemType, item.id);
             shopItemList.Add(shopItem);
         }
 

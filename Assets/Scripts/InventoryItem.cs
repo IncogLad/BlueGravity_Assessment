@@ -14,24 +14,26 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private Transform itemSlot;
 
     private int slotId;
+    public int equipId;
     [SerializeField] private Image itemIcon;
 
     public void SetItemId(int id) { this.slotId = id; }
     public void SetItemSlot(Transform transform) { itemSlot = transform; }
     public int GetItemId() { return slotId; }
     public string GetItemName() { return itemName; }
+    public int GetEquipId() { return equipId; }
     public ItemType GetItemType() { return itemType; }
     public int GetItemCost() { return this.cost; }
     public Transform GetItemSlot() { return itemSlot; }
     public Sprite GetItemSprite() { return itemIcon.sprite; }
 
-    public void SetInvItemVar(Sprite sprite, string name, int cost, ItemType type)
+    public void SetInvItemVar(Sprite sprite, string name, int cost, ItemType type, int equipId)
     {
         this.itemIcon.sprite = sprite;
         this.itemName = name;
         this.cost = cost;
         this.itemType = type;
-
+        this.equipId =equipId;
         //is set after item is spawned in the inventory
         itemSlot = transform.parent;
     }
@@ -56,6 +58,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         transform.SetParent(itemSlot);
         itemIcon.raycastTarget = true;
+        ShopManager.Instance.GetShopDropSell().gameObject.SetActive(false);
 
     }
 

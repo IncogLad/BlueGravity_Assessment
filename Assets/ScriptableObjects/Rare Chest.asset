@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 1
   name: Rare Chest
   cost: 2
-  itemType: 3
+  itemType: 4
   iconSprite: {fileID: 1394323812, guid: f4a4b38cce512214d94153269c52e620, type: 3}
   torsoSprite: {fileID: 21300000, guid: fff248787aa9dc44d819b77a6686c0af, type: 3}
   pelvisSprite: {fileID: 21300000, guid: f5e38fc0746afdb408f3af29c6c737cc, type: 3}
