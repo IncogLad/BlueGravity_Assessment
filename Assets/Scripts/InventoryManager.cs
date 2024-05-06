@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static InventoryManager Instance;
+
+    [SerializeField] private List<InventoryItem> inventoryItemList = new List<InventoryItem>();
+
+    [SerializeField] private List<GameObject> inventoryItemSlot = new List<GameObject>();
+
+    private void Awake()
     {
-        
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void SetInvItemListIds()
     {
-        
+        for (int i = 0; i < inventoryItemList.Count; i++)
+        {
+            inventoryItemList[i].SetItemId(i);
+        }
     }
+
 }

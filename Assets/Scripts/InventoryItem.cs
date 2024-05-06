@@ -1,27 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.EventSystems;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ShopItem : MonoBehaviour
+public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     private int id;
     private int cost;
-    [SerializeField] private Image itemIcon;
-    [SerializeField] private TextMeshProUGUI itemName;
-    [SerializeField] private TextMeshProUGUI itemCost;
-    [SerializeField] private ItemType itemType;
+    private string itemName;
+    private ItemType itemType;
 
-    [SerializeField] private GameObject soldOutIndicator;
-    private bool isSold = false;
+    [SerializeField] private Image itemIcon;
 
     public void SetItemId(int id) { this.id = id; }
     public int GetItemId() { return id; }
-    public string GetItemName() { return itemName.text; }
     public ItemType GetItemType() { return itemType; }
     public int GetItemCost() { return this.cost; }
 
@@ -29,21 +24,12 @@ public class ShopItem : MonoBehaviour
     public void SetShopItemInfo(Sprite sprite, string name, int cost, ItemType type)
     {
         this.itemIcon.sprite = sprite;
-        this.itemName.text = name;
+        this.itemName = name;
         this.cost = cost;
-        this.itemCost.text = cost.ToString();
         this.itemType = type;
     }
-
-    public void SetToSoldOut()
-    {
-        if (isSold) { return;}
-
-        soldOutIndicator.SetActive(true);
-        RemoveOnClickEvent();
-    }
-
-    public void OnClickShopItem(BaseEventData eventData)
+    
+    public void OnClickInvItem(BaseEventData eventData)
     {
         ShopManager.Instance.SetSelectedId(this.id);
         ShopManager.Instance.ItemConfirmPanel();
@@ -65,11 +51,25 @@ public class ShopItem : MonoBehaviour
         {
             EventTrigger.Entry entry = new EventTrigger.Entry();
             entry.eventID = EventTriggerType.PointerClick;
-            UnityAction<BaseEventData> callback = new UnityAction<BaseEventData>(OnClickShopItem);
+            UnityAction<BaseEventData> callback = new UnityAction<BaseEventData>(OnClickInvItem);
             entry.callback.AddListener(callback);
             eventTrigger.triggers.Add(entry);
         }
     }
 
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        throw new System.NotImplementedException();
+    }
 
 }

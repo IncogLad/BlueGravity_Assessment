@@ -47,26 +47,34 @@ public class ShopManager : MonoBehaviour
         {
             ShopItem shopItem = SpawnShopItem();
             shopItem.SetShopItemInfo(item.iconSprite, item.name, item.cost, item.itemType);
+            shopItemList.Add(shopItem);
         }
 
         foreach (var item in EquipmentManager.Instance.headEquipmentList)
         {
             ShopItem shopItem = SpawnShopItem();
             shopItem.SetShopItemInfo(item.iconSprite, item.name, item.cost, item.itemType);
+            shopItemList.Add(shopItem);
         }
 
         foreach (var item in EquipmentManager.Instance.chestEquipmentList)
         {
             ShopItem shopItem = SpawnShopItem();
             shopItem.SetShopItemInfo(item.iconSprite, item.name, item.cost, item.itemType);
+            shopItemList.Add(shopItem);
         }
 
         foreach (var item in EquipmentManager.Instance.legEquipmentList)
         {
             ShopItem shopItem = SpawnShopItem();
             shopItem.SetShopItemInfo(item.iconSprite, item.name, item.cost, item.itemType);
+            shopItemList.Add(shopItem);
         }
 
+    }
+    public ShopItem GetSelectedShopItem()
+    {
+        return shopItemList[selectedId];
     }
 
     public ShopItem SpawnShopItem()
@@ -101,7 +109,5 @@ public class ShopManager : MonoBehaviour
         string itemName = shopItemList[selectedId].GetItemName();
         confirmationPanel.ItemConfirmation(itemName);
     }
-
-
 
 }

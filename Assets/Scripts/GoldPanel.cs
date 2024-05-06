@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GoldPanel : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private TextMeshProUGUI goldAmount;
+
     void Start()
     {
-        
+        ResourceManager.Instance.updateGold.AddListener(UpdateGoldUI);
+        UpdateGoldUI();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateGoldUI()
     {
-        
+        goldAmount.text = ResourceManager.Instance.gold.ToString();
     }
 }
