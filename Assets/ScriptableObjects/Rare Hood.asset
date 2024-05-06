@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d34ef193b0a81e46a7fde700bdc903f, type: 3}
+  m_Name: Rare Hood
+  m_EditorClassIdentifier: 
+  id: 1
+  name: Rare Hood
+  cost: 2
+  itemType: 1
+  iconSprite: {fileID: -1874493040, guid: 137c67e0cf9a56247acb1745651434df, type: 3}
+  hoodSprite: {fileID: 21300000, guid: dcb72940063c94f44abc2366768e713a, type: 3}
+  maskSprite: {fileID: 21300000, guid: f0dca671fefddc54c98270536b979b8b, type: 3}
