@@ -20,6 +20,7 @@ public class ShopItem : MonoBehaviour
     private bool isSold = false;
 
     public void SetItemId(int id) { this.id = id; }
+    public Sprite GetItemSprite() { return itemIcon.sprite; }
     public int GetItemId() { return id; }
     public string GetItemName() { return itemName.text; }
     public ItemType GetItemType() { return itemType; }
@@ -31,7 +32,7 @@ public class ShopItem : MonoBehaviour
         this.itemIcon.sprite = sprite;
         this.itemName.text = name;
         this.cost = cost;
-        this.itemCost.text = cost.ToString();
+        this.itemCost.text = "Cost: "+cost.ToString();
         this.itemType = type;
     }
 

@@ -16,8 +16,10 @@ public class ConfirmationPanel : MonoBehaviour
 
     public void BuyItem()
     {
+        ShopItem selectedShopItem = ShopManager.Instance.GetSelectedShopItem();
+        
         int gold = ResourceManager.Instance.gold;
-        int cost = ShopManager.Instance.GetSelectedShopItem().GetItemCost();
+        int cost = selectedShopItem.GetItemCost();
 
         if (gold < cost)
         {
@@ -26,7 +28,8 @@ public class ConfirmationPanel : MonoBehaviour
         }
 
         ResourceManager.Instance.UpdateGold(-cost);
-        ShopManager.Instance.GetSelectedShopItem().SetToSoldOut();
+        InventoryManager.Instance.SpawnInventoryItem(selectedShopItem);
+        selectedShopItem.SetToSoldOut();
         CloseMenu();
 
     }

@@ -8,6 +8,7 @@ public class ShopManager : MonoBehaviour
     private int selectedId = -1;
 
     [SerializeField] private ConfirmationPanel confirmationPanel;
+    [SerializeField] private ShopDropSell shopDropSell;
 
     [SerializeField] private GameObject shopItemPrefab;
     [SerializeField] private GameObject shopContentParent;
@@ -77,6 +78,11 @@ public class ShopManager : MonoBehaviour
         return shopItemList[selectedId];
     }
 
+    public ShopDropSell GetShopDropSell()
+    {
+        return shopDropSell;
+    }
+
     public ShopItem SpawnShopItem()
     {
         GameObject newItem = Instantiate(shopItemPrefab);
@@ -96,6 +102,11 @@ public class ShopManager : MonoBehaviour
     public void SetSelectedId(int id)
     {
         selectedId = id;
+    }
+
+    public int GetSelectedId()
+    {
+        return selectedId;
     }
 
     public void ItemConfirmPanel()
