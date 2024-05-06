@@ -26,11 +26,43 @@ public class PlayerSkeleton : MonoBehaviour
     [SerializeField] private SpriteRenderer rightLegRenderer;
     [SerializeField] private SpriteRenderer rightBootRenderer;
 
+    [Header("Default Equipment")]
+    private Sprite hoodDef;
+    private Sprite maskDef;
+    private Sprite torsoDef;
+    private Sprite pelvisDef;
+    private Sprite leftShoulderDef;
+    private Sprite leftArmDef;
+    private Sprite leftGlovesDef;
+    private Sprite rightShoulderDef;
+    private Sprite rightArmDef;
+    private Sprite rightGlovesDef;
+    private Sprite leftLegDef;
+    private Sprite leftBootDef;
+    private Sprite rightLegDef;
+    private Sprite rightBootDef;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        hoodDef = hoodRenderer.sprite;
+        maskDef = maskRenderer.sprite;
+
+        torsoDef = torsoRenderer.sprite;
+        pelvisDef = pelvisRenderer.sprite;
+
+        leftLegDef = leftBootRenderer.sprite;
+        leftBootDef = leftLegRenderer.sprite;
+        rightLegDef = rightBootRenderer.sprite;
+        rightBootDef = rightLegRenderer.sprite;
+
+        leftShoulderDef = leftShoulderRenderer.sprite;
+        leftArmDef = leftArmRenderer.sprite;
+        leftGlovesDef = leftGlovesRenderer.sprite;
+        rightShoulderDef = rightShoulderRenderer.sprite;
+        rightArmDef = rightArmRenderer.sprite;
+        rightGlovesDef = rightGlovesRenderer.sprite;
     }
 
     // Update is called once per frame
@@ -38,4 +70,5 @@ public class PlayerSkeleton : MonoBehaviour
     {
         
     }
+
 }
