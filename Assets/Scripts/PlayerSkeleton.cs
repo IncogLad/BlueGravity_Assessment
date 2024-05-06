@@ -64,11 +64,6 @@ public class PlayerSkeleton : MonoBehaviour
         rightArmDef = rightArmRenderer.sprite;
         rightGlovesDef = rightGlovesRenderer.sprite;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
 }

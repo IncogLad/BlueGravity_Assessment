@@ -6,8 +6,10 @@ public class EquipmentManager : MonoBehaviour
 {
     public static EquipmentManager Instance;
 
-    public List<ArmEquipment> armEquipmentList;
-    public List<HeadEquipment> headEquipmentList;
+    public List<ArmEquipment> armEquipmentList = new List<ArmEquipment>();
+    public List<HeadEquipment> headEquipmentList = new List<HeadEquipment>();
+    public List<ChestEquipment> chestEquipmentList = new List<ChestEquipment>();
+    public List<LegEquipment> legEquipmentList = new List<LegEquipment>();
 
     private void Awake()
     {
@@ -26,9 +28,5 @@ public class EquipmentManager : MonoBehaviour
     {
         
     }
-
-    void Update()
-    {
-        
-    }
+    
 }
