@@ -36,6 +36,7 @@ public class NPCShopkeeper : MonoBehaviour
                 inventory.SetActive(true);
                 interactButton.SetActive(false);
                 msgText.SetActive(true);
+                AudioManager.Instance.PlayAudio(SoundEffect.NOTIF);
             }
 
             

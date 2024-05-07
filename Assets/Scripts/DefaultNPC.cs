@@ -31,6 +31,7 @@ public class DefaultNPC : MonoBehaviour
             {
                 interactButton.SetActive(false);
                 msgText.SetActive(true);
+                AudioManager.Instance.PlayAudio(SoundEffect.NOTIF);
             }
 
 

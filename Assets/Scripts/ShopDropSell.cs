@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using static UnityEditor.Progress;
 
 public class ShopDropSell : MonoBehaviour, IDropHandler
 {
@@ -19,6 +18,7 @@ public class ShopDropSell : MonoBehaviour, IDropHandler
             Destroy(newInvItem.gameObject);
         }
         ShopManager.Instance.GetShopDropSell().gameObject.SetActive(false);
+        AudioManager.Instance.PlayAudio(SoundEffect.GOLD);
 
     }
 

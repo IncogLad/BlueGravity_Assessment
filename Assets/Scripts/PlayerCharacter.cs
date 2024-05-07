@@ -7,15 +7,6 @@ public class PlayerCharacter : MonoBehaviour, IPlayerControllable
     [SerializeField] private float movementSpeed = 2f;
     [SerializeField] private PlayerSkeleton skeleton;
 
-    [SerializeField] private AnimationClip run;
-    [SerializeField] private AnimationClip idle;
-
-
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if (GameManager.Instance.isPaused)

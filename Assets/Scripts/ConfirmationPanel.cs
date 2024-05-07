@@ -30,6 +30,7 @@ public class ConfirmationPanel : MonoBehaviour
         ResourceManager.Instance.UpdateGold(-cost);
         InventoryManager.Instance.SpawnInventoryItem(selectedShopItem);
         selectedShopItem.SetToSoldOut();
+        AudioManager.Instance.PlayAudio(SoundEffect.GOLD);
         CloseMenu();
 
     }
@@ -39,6 +40,7 @@ public class ConfirmationPanel : MonoBehaviour
         gameObject.SetActive(false);
         warningText.gameObject.SetActive(false);
         ShopManager.Instance.SetSelectedId(-1);
+        
     }
 
 }

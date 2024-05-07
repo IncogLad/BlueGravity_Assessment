@@ -46,6 +46,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         transform.SetParent(transform.root);
         transform.SetAsLastSibling();
         itemIcon.raycastTarget = false;
+        AudioManager.Instance.PlayAudio(SoundEffect.CRATE);
 
     }
 
@@ -59,6 +60,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         transform.SetParent(itemSlot);
         itemIcon.raycastTarget = true;
         ShopManager.Instance.GetShopDropSell().gameObject.SetActive(false);
+        
 
     }
 
