@@ -18,7 +18,10 @@ public class PlayerCharacter : MonoBehaviour, IPlayerControllable
 
     void Update()
     {
-        
+        if (GameManager.Instance.isPaused)
+        { return; }
+
+
         MovementInput();
     }
 

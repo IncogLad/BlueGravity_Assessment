@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public bool isPaused = false;
     
-    private GameObject pauseMenu;
-    private GameObject inventoryPanel;
+    public GameObject pauseMenu;
+    public GameObject inventoryPanel;
+    private Scene currentScene;
 
     private void Awake()
     {
@@ -21,31 +23,35 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-    }
 
-    void Start()
-    {
-        pauseMenu = FindObjectOfType<PauseMenu>().gameObject;
-        inventoryPanel = FindObjectOfType<InventoryManager>().gameObject;
+        currentScene = SceneManager.GetActiveScene();
+        
     }
+    
 
     void Update()
     {
+        if (currentScene.name == "MainMenu")
+            return;
+
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (pauseMenu.activeSelf)
             {
                 pauseMenu.SetActive(false);
+                isPaused = false;
             }
             else
             {
                 pauseMenu.SetActive(true);
+                isPaused = true;
             }
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (!inventoryPanel.activeSelf)
+            if (!inventoryPanel.activeSelf && !pauseMenu.activeSelf)
             {
                 inventoryPanel.SetActive(true);
             }
@@ -56,15 +62,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void MainMenu()
+    public void MainMenu()
     {
         SceneManager.LoadSceneAsync("MainMenu");
     }
 
-    void ExitGame()
+    public void ExitGame()
     {
         Application.Quit();
     }
-
 
 }
