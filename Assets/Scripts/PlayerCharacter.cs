@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerCharacter : MonoBehaviour, IPlayerControllable
 {
-    [SerializeField] private float movementSpeed = 1.5f;
+    [SerializeField] private float movementSpeed = 2f;
+    [SerializeField] private PlayerSkeleton skeleton;
 
 
     void Start()
@@ -47,6 +48,8 @@ public class PlayerCharacter : MonoBehaviour, IPlayerControllable
         if (x_axisValue < 0)
         {
             Move(Vector3.left);
+            if (skeleton.gameObject.transform.localScale.x >= 0)
+                skeleton.gameObject.transform.localScale = new Vector3(-skeleton.gameObject.transform.localScale.x, skeleton.gameObject.transform.localScale.y, skeleton.gameObject.transform.localScale.z);
         }
         if (y_axisValue < 0)
         {
@@ -55,9 +58,9 @@ public class PlayerCharacter : MonoBehaviour, IPlayerControllable
         if (x_axisValue > 0)
         {
             Move(Vector3.right);
+            if (skeleton.gameObject.transform.localScale.x < 0)
+                skeleton.gameObject.transform.localScale = new Vector3(-skeleton.gameObject.transform.localScale.x, skeleton.gameObject.transform.localScale.y, skeleton.gameObject.transform.localScale.z);
         }
-    
-        
     }
 
 }
