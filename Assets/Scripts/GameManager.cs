@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     public bool isPaused = false;
     
     public GameObject pauseMenu;
-    public GameObject inventoryPanel;
     private Scene currentScene;
 
     private void Awake()
@@ -49,17 +48,6 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            if (!inventoryPanel.activeSelf && !pauseMenu.activeSelf)
-            {
-                inventoryPanel.SetActive(true);
-            }
-            else
-            {
-                inventoryPanel.SetActive(false);
-            }
-        }
     }
 
     public void MainMenu()
