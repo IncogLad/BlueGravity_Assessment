@@ -18393,7 +18393,6 @@ GameObject:
   m_Component:
   - component: {fileID: 233091358}
   - component: {fileID: 233091357}
-  - component: {fileID: 233091359}
   m_Layer: 0
   m_Name: TopDownWorldGrid
   m_TagString: Untagged
@@ -18433,17 +18432,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!210 &233091359
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 233091356}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!1 &238709633
 GameObject:
   m_ObjectHideFlags: 0
@@ -18644,7 +18632,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 999
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -20209,7 +20197,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -183.8965, y: 493.33557}
+  m_AnchoredPosition: {x: -183.8965, y: 493.33542}
   m_SizeDelta: {x: 382.1836, y: 2046.2095}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &699353325
@@ -21095,10 +21083,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67de60e3f3019024aa1ab5fd210f3dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confirmationPanel: {fileID: 0}
-  shopDropSell: {fileID: 0}
-  shopItemPrefab: {fileID: 0}
-  shopContentParent: {fileID: 0}
+  confirmationPanel: {fileID: 1641921819}
+  shopDropSell: {fileID: 1445712088}
+  shopItemPrefab: {fileID: 1613047982232596475, guid: e140cbe5c92740a4e86af3b2047587f1, type: 3}
+  shopContentParent: {fileID: 699353323}
   shopItemList: []
 --- !u!1 &1062032630
 GameObject:
@@ -22312,7 +22300,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 537192439}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.48219228
+  m_Size: 0.4821918
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
